@@ -1,3 +1,16 @@
 steps:
-- name: ubuntu
-  args: ['echo', 'Hello, world!']
+  # Pre-existing step in the pipeline (example)
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['-c', 'echo "Starting build process..."']
+
+  # New ubuntu step you want to add
+  - name: 'ubuntu'
+    args: ['echo', 'Hello, world!']
+
+  # Another pre-existing step (example)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-app', '.']
+
+options:
+  logging: CLOUD_LOGGING_ONLY  # You can add or modify this depending on your logging preference
