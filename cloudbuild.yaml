@@ -4,9 +4,11 @@ steps:
     entrypoint: 'bash'
     args: ['-c', 'echo "Starting build process..."']
 
-  # New ubuntu step you want to add
+  # New ubuntu step to echo "Hello, world!"
   - name: 'ubuntu'
     args: ['echo', 'Hello, world!']
 
+# Set options including the machine type
 options:
-  logging: CLOUD_LOGGING_ONLY  # You can add or modify this depending on your logging preference
+  machineType: 'E2_HIGHCPU_16'  # Select machine type with 16 GB memory
+  logging: CLOUD_LOGGING_ONLY   # Optional - Set logging preference (can customize based on your needs)
