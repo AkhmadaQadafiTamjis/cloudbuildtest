@@ -10,5 +10,5 @@ steps:
 
 # Set options including the machine type
 options:
-  machineType: 'e2-highmem-4'  # Select machine type with 16 GB memory
+  machineType: 'E2_HIGHCPU_32'  # Select machine type with 16 GB memory
   logging: CLOUD_LOGGING_ONLY   # Optional - Set logging preference (can customize based on your needs)
